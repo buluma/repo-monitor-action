@@ -26,7 +26,7 @@ steps:
         yarn build
         SIZE=($(du -s dist/))
         echo "::set-output name=code_size::$SIZE"
-    - uses: buluma/repo-monitor-action@0.1.0
+    - uses: buluma/repo-monitor-action@0.1.1
       name: Update Report
       with:
         key: code-size
