@@ -2,7 +2,7 @@
   "compilerOptions": {
     "skipLibCheck": true,
     "outDir": "./dist",
-    "lib": ["es2020", "DOM"],
+    "lib": ["es2020", "dom"],
     "module": "commonjs",
     "target": "es2019",
     "jsx": "react"
