@@ -18,7 +18,7 @@ The following steps generate some data and push them through the action to Pages
 
 ```
 steps:
-    - uses: actions/checkout@v2.3.1
+    - uses: actions/checkout@v3
     - name: Calculate project metrics
       id: projectmetrics
       run: |
@@ -26,7 +26,7 @@ steps:
         yarn build
         SIZE=($(du -s dist/))
         echo "::set-output name=code_size::$SIZE"
-    - uses: buluma/repo-monitor-action@v1.4.1
+    - uses: buluma/repo-monitor-action@0.1.0
       name: Update Report
       with:
         key: code-size
