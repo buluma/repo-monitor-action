@@ -4,7 +4,7 @@ This Github action generates custom metrics reports including the last releases 
 
 The example for the project itself can found at:
 
-https://floric.github.io/repo-monitor-action/
+https://buluma.github.io/repo-monitor-action/
 
 Please note, this action **will commit changes to the `gh-pages` branch** and use subfolders to save the metrics.
 
@@ -12,7 +12,7 @@ Please note, this action **will commit changes to the `gh-pages` branch** and us
 
 An extensive example for this project can found at:
 
-https://github.com/floric/repo-monitor-action/blob/master/.github/workflows/update-monitor.yml
+https://github.com/buluma/repo-monitor-action/blob/master/.github/workflows/update-monitor.yml
 
 The following steps generate some data and push them through the action to Pages:
 
@@ -26,7 +26,7 @@ steps:
         yarn build
         SIZE=($(du -s dist/))
         echo "::set-output name=code_size::$SIZE"
-    - uses: floric/repo-monitor-action@v1.4.1
+    - uses: buluma/repo-monitor-action@v1.4.1
       name: Update Report
       with:
         key: code-size
@@ -36,7 +36,7 @@ steps:
 
 The metrics need to be configured with a custom config:
 
-https://github.com/floric/repo-monitor-action/blob/master/.github/repo-monitor-action/config.yml
+https://github.com/buluma/repo-monitor-action/blob/master/.github/repo-monitor-action/config.yml
 
 The following config whould show the codesize as described in the action above:
 
