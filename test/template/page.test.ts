@@ -30,7 +30,7 @@ describe("Report", () => {
     prepareMocks(core, github);
     const year: ReleaseYear = {
       releases: [],
-      year: 2020,
+      year: 2022,
     };
 
     // when
@@ -50,7 +50,7 @@ describe("Report", () => {
             ...github.getOctokit().repos,
             ...mockAnswer([
               {
-                key: `data/values/2020/key-a.json`,
+                key: `data/values/2022/key-a.json`,
                 content: JSON.stringify({
                   key: "key-a",
                   type: "scalar",
@@ -64,7 +64,7 @@ describe("Report", () => {
                 } as MetricsData),
               },
               {
-                key: `data/values/2020/key-b.json`,
+                key: `data/values/2022/key-b.json`,
                 content: JSON.stringify({
                   key: "key-b",
                   type: "scalar",
@@ -75,7 +75,7 @@ describe("Report", () => {
                 } as MetricsData),
               },
               {
-                key: `data/releases/2020/releases.json`,
+                key: `data/releases/2022/releases.json`,
                 content: JSON.stringify(year),
               },
               {
@@ -111,7 +111,7 @@ describe("Report", () => {
         { id: "rel-y", timestamp: 7 },
         { id: "rel-z", timestamp: 8 },
       ],
-      year: 2020,
+      year: 2022,
     };
 
     // when
@@ -126,7 +126,7 @@ describe("Report", () => {
     const ids = new Array(40).fill(0).map((_, i) => i);
     const year: ReleaseYear = {
       releases: ids.map((i) => ({ id: `rel-${i}`, timestamp: i })),
-      year: 2020,
+      year: 2022,
     };
     prepareMocks(core, {
       ...github,
@@ -136,7 +136,7 @@ describe("Report", () => {
             ...github.getOctokit().repos,
             ...mockAnswer([
               {
-                key: `data/values/2020/key-a.json`,
+                key: `data/values/2022/key-a.json`,
                 content: JSON.stringify({
                   key: "key-a",
                   type: "scalar",
@@ -144,7 +144,7 @@ describe("Report", () => {
                 } as MetricsData),
               },
               {
-                key: `data/releases/2020/releases.json`,
+                key: `data/releases/2022/releases.json`,
                 content: JSON.stringify(year),
               },
               {
