@@ -85,7 +85,7 @@ describe("Report", () => {
             { id: "rel-a", timestamp: 1 },
             { id: "rel-b", timestamp: 2 },
           ],
-          year: 2020,
+          year: 2022,
         }}
         releasesMap={releasesMap}
       />,
@@ -132,7 +132,7 @@ describe("Report", () => {
         graphics={graphics}
         releases={{
           releases: ids.map((i) => ({ id: `rel-${i}`, timestamp: i })),
-          year: 2020,
+          year: 2022,
         }}
         releasesMap={releasesMap}
       />,
