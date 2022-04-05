@@ -10,10 +10,10 @@ updates:
     schedule:
       interval: "weekly"
     assignees:
-      - "floric"
+      - "buluma"
   - package-ecosystem: "github-actions"
     directory: "/"
     schedule:
       interval: "weekly"
     assignees:
-      - "floric"
+      - "buluma"
