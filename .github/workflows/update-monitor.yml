@@ -30,8 +30,6 @@ jobs:
           key: code-size
           value: ${{ env.code_size }}
           token: ${{ secrets.GITHUB_TOKEN }}
-          env:
-            ACTIONS_ALLOW_UNSECURE_COMMANDS: 'true'
       - uses: ./
         name: Update Report for Files Count
         with:
