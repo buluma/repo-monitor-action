@@ -1,4 +1,5 @@
 # Repository Monitor Action
+[![pages-build-deployment](https://github.com/buluma/repo-monitor-action/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/buluma/repo-monitor-action/actions/workflows/pages/pages-build-deployment)
 
 This Github action generates custom metrics reports including the last releases using GitHub Pages.
 
