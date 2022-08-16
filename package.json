@@ -39,10 +39,10 @@
     }
   },
   "dependencies": {
-    "@actions/core": "^1.2.4",
+    "@actions/core": "^1.9.1",
     "@actions/github": "^4.0.0",
     "@types/react-dom": "^18.0.3",
-    "dayjs": "^1.8.34",
+    "dayjs": "^1.11.5",
     "js-yaml": "^3.14.0",
     "purgecss": "^2.3.0",
     "react": "^16.14.0",
