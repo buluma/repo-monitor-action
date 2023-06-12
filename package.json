@@ -47,7 +47,7 @@
     "purgecss": "^5.0.0",
     "react": "^16.14.0",
     "react-dom": "^16.13.1",
-    "react-vis": "^1.11.7",
+    "react-vis": "^1.12.1",
     "tailwindcss": "^1.7.3"
   },
   "devDependencies": {
