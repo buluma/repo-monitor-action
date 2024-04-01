@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - master
+      - testing
   workflow_dispatch:
 
 jobs:
@@ -14,5 +15,5 @@ jobs:
       - name: Build and Test
         run: |
           yarn
-          # yarn build
-          # yarn test
+          yarn build
+          yarn test
