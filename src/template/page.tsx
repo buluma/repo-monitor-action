@@ -1,6 +1,6 @@
 import * as React from "react";
 import * as ReactDOM from "react-dom/server";
-import PurgeCSS from "purgecss";
+import { PurgeCSS } from "purgecss";
 import * as core from "@actions/core";
 import * as dayjs from "dayjs";
 import * as localizedFormat from "dayjs/plugin/localizedFormat";
