@@ -18,7 +18,7 @@ The following steps generate some data and push them through the action to Pages
 
 ```
 steps:
-    - uses: actions/checkout@v2.3.1
+    - uses: actions/checkout@v4.3.1
     - name: Calculate project metrics
       id: projectmetrics
       run: |
