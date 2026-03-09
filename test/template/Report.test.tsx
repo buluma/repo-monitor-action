@@ -7,6 +7,10 @@ import { Report } from "../../src/template/Report";
 import { ChartGraphics } from "../../src/template/page";
 import { importCss } from "../../src/template/style";
 
+jest.mock("../../src/template/style", () => ({
+  importCss: () => "",
+}));
+
 dayjs.extend(localizedFormat);
 
 const context = {

@@ -10,7 +10,7 @@ export async function getContent(
   const { token, owner, repo, branch } = context;
   try {
     const octokit = github.getOctokit(token);
-    const res = await octokit.repos.getContent({
+    const res = await octokit.rest.repos.getContent({
       owner,
       repo,
       ref: branch,
@@ -18,6 +18,13 @@ export async function getContent(
       path,
     });
     if (res?.status == 200) {
+      if (Array.isArray(res.data) || !("content" in res.data)) {
+        core.warning("Path is a directory, not a file.");
+        return {
+          serializedData: null,
+          existingSha: null,
+        };
+      }
       return {
         serializedData: fromBase64(res.data.content),
         existingSha: res.data.sha,
@@ -41,7 +48,7 @@ export async function createOrUpdateContent(
 ) {
   const { token, owner, repo, branch } = context;
   const octokit = github.getOctokit(token);
-  await octokit.repos.createOrUpdateFileContents({
+  await octokit.rest.repos.createOrUpdateFileContents({
     owner,
     repo,
     branch,

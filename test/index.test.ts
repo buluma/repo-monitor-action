@@ -36,15 +36,17 @@ describe("General", () => {
       ...github,
       ...{
         getOctokit: () => ({
-          repos: {
-            ...github.getOctokit().repos,
-            ...mockAnswer([
-              {
-                key: ".github/repo-monitor-action/config.yml",
-                content: "asd:asf:asd",
-              },
-            ]),
-          },
+          rest: {
+            repos: {
+              ...github.getOctokit().rest.repos,
+              ...mockAnswer([
+                {
+                  key: ".github/repo-monitor-action/config.yml",
+                  content: "asd:asf:asd",
+                },
+              ]),
+            },
+          }
         }),
       },
     });
@@ -65,15 +67,17 @@ describe("General", () => {
       ...github,
       ...{
         getOctokit: () => ({
-          repos: {
-            ...github.getOctokit().repos,
-            ...mockAnswer([
-              {
-                key: ".github/repo-monitor-action/config.yml",
-                content: null,
-              },
-            ]),
-          },
+          rest: {
+            repos: {
+              ...github.getOctokit().rest.repos,
+              ...mockAnswer([
+                {
+                  key: ".github/repo-monitor-action/config.yml",
+                  content: null,
+                },
+              ]),
+            },
+          }
         }),
       },
     });
@@ -150,15 +154,17 @@ describe("General", () => {
       ...github,
       ...{
         getOctokit: () => ({
-          repos: {
-            ...github.getOctokit().repos,
-            ...mockAnswer([
-              {
-                key: `data/values/${new Date().getFullYear()}/key-a.json`,
-                content: null,
-              },
-            ]),
-          },
+          rest: {
+            repos: {
+              ...github.getOctokit().rest.repos,
+              ...mockAnswer([
+                {
+                  key: `data/values/${new Date().getFullYear()}/key-a.json`,
+                  content: null,
+                },
+              ]),
+            },
+          }
         }),
       },
     });
@@ -179,15 +185,17 @@ describe("General", () => {
       ...github,
       ...{
         getOctokit: () => ({
-          repos: {
-            ...github.getOctokit().repos,
-            ...mockAnswer([
-              {
-                key: `data/releases/${new Date().getFullYear()}/releases.json`,
-                content: null,
-              },
-            ]),
-          },
+          rest: {
+            repos: {
+              ...github.getOctokit().rest.repos,
+              ...mockAnswer([
+                {
+                  key: `data/releases/${new Date().getFullYear()}/releases.json`,
+                  content: null,
+                },
+              ]),
+            },
+          }
         }),
       },
     });
@@ -209,21 +217,23 @@ describe("General", () => {
       ...github,
       ...{
         getOctokit: () => ({
-          repos: {
-            ...github.getOctokit().repos,
-            ...mockAnswer([
-              {
-                key: `data/releases/${new Date().getFullYear()}/releases.json`,
-                content: JSON.stringify({
-                  year: new Date().getFullYear(),
-                  releases: [
-                    { timestamp: 1, id: "rel-x" },
-                    { timestamp: 2, id: "rel-y" },
-                  ],
-                }),
-              },
-            ]),
-          },
+          rest: {
+            repos: {
+              ...github.getOctokit().rest.repos,
+              ...mockAnswer([
+                {
+                  key: `data/releases/${new Date().getFullYear()}/releases.json`,
+                  content: JSON.stringify({
+                    year: new Date().getFullYear(),
+                    releases: [
+                      { timestamp: 1, id: "rel-x" },
+                      { timestamp: 2, id: "rel-y" },
+                    ],
+                  }),
+                },
+              ]),
+            },
+          }
         }),
       },
     });
