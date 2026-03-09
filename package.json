@@ -8,11 +8,10 @@
     "build": "tsc --project tsconfig.prod.json",
     "release": "npx standard-version",
     "commit": "git add . && npx git-cz --disable-emoji",
-    "test": "jest"
+    "test": "jest --detectOpenHandles"
   },
   "jest": {
     "forceExit": true,
-    "detectOpenHandles": true,
     "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{ts,tsx}"
