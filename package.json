@@ -52,7 +52,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.5",
-    "@types/chart.js": "^2.9.37",
+    "@types/chart.js": "^4.0.1",
     "@types/jest": "^26.0.10",
     "@types/js-yaml": "^4.0.9",
     "@types/react": "^16.9.46",
