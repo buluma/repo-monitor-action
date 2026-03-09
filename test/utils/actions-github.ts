@@ -1,11 +1,13 @@
-import { safeDump } from "js-yaml";
+import { dump } from "js-yaml";
 import { toBase64 } from "../../src/io/encoding";
 import { ReleaseYear, MetricsData, Config } from "../../src/model";
 
 export const getOctokit = () => ({
-  repos: {
-    createOrUpdateFileContents: async () => {},
-    ...mockAnswer([]),
+  rest: {
+    repos: {
+      createOrUpdateFileContents: async () => {},
+      ...mockAnswer([]),
+    },
   },
 });
 
@@ -69,7 +71,7 @@ export const mockAnswer = (
             },
           },
         };
-        return createAnswer(safeDump(config));
+        return createAnswer(dump(config));
       },
       [`data/values/${year}/key-a.json`]: () => {
         const data: MetricsData = {
