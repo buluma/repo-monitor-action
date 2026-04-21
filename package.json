@@ -48,7 +48,7 @@
     "react": "^16.14.0",
     "react-dom": "^16.13.1",
     "react-vis": "^1.12.1",
-    "tailwindcss": "^4.2.1"
+    "tailwindcss": "^4.2.3"
   },
   "devDependencies": {
     "@testing-library/react": "^12.1.5",
