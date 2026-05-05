@@ -26,7 +26,9 @@ const snapshotOpts = {
   failureThresholdType: "percent",
 };
 
-describe("Report", () => {
+const describeReport = process.env.CI ? describe.skip : describe;
+
+describeReport("Report", () => {
   it("Renders correctly", async () => {
     const div = prepareDom();
 

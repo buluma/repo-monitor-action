@@ -12,6 +12,9 @@ describe("General", () => {
   it("Should run full process", async () => {
     // given
     const { coreMock } = prepareMocks(core, github);
+    jest.doMock("../src/template/updater", () => ({
+      updateTemplate: jest.fn(async () => undefined),
+    }));
 
     // when
     await require("../src/logic").runAction();
@@ -32,6 +35,7 @@ describe("General", () => {
 
   it("Should fail with invalid config", async () => {
     // given
+    jest.dontMock("../src/template/updater");
     const { coreMock } = prepareMocks(core, {
       ...github,
       ...{
@@ -63,6 +67,7 @@ describe("General", () => {
 
   it("Should fail with missing config", async () => {
     // given
+    jest.dontMock("../src/template/updater");
     const { coreMock } = prepareMocks(core, {
       ...github,
       ...{
@@ -168,6 +173,9 @@ describe("General", () => {
         }),
       },
     });
+    jest.doMock("../src/template/updater", () => ({
+      updateTemplate: jest.fn(async () => undefined),
+    }));
 
     // when
     await require("../src/logic").runAction();
@@ -199,6 +207,9 @@ describe("General", () => {
         }),
       },
     });
+    jest.doMock("../src/template/updater", () => ({
+      updateTemplate: jest.fn(async () => undefined),
+    }));
 
     // when
     await require("../src/logic").runAction();
@@ -237,6 +248,9 @@ describe("General", () => {
         }),
       },
     });
+    jest.doMock("../src/template/updater", () => ({
+      updateTemplate: jest.fn(async () => undefined),
+    }));
 
     // when
     await require("../src/logic").runAction();
